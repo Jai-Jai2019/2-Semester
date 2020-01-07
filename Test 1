@@ -9,28 +9,26 @@ public class FibonacciSort {
 		}
 	return fibonacciRecursion(n-2) + fibonacciRecursion(n-1);
 	}
+    
     public static void main(String args[]) throws IOException{
         
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Enter a number: ");
         int choice = Integer.parseInt(br.readLine());
-         try{
-        do{
-       
-	
-        
-	System.out.print("f("+choice+"): ");
-        
+         
+        try{
+        System.out.print("f("+choice+"): ");
+        {
+     
 	for(int i = 0; i < choice; i++){
 			System.out.print(fibonacciRecursion(i) +", ");
 		}
-        
-	
-    }while(choice>=1&&choice<=50);
-         }catch(Exception e){
+        }while(choice>=1&&choice<=50); 
+        }catch(Exception e){
             System.out.println("");
+            
+        }
     }
-}
 }
     
     
