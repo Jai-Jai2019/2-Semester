@@ -43,7 +43,6 @@ public class Calculator {
         }
         System.out.println();
         sc.close();
-        return;
     }
 
     public static void addition(){
@@ -143,6 +142,6 @@ public class Calculator {
         input1 = sc.nextInt();
     
         System.out.print("\n===========================");
-        System.out.println("\nSum: " + " ++" + intpu1 + " = " + (++input1));
+        System.out.println("\nSum: " + "++" + input1 + " = " + (++input1));
     }
 }
