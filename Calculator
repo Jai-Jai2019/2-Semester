@@ -2,22 +2,20 @@ package calculator;
 
 import java.util.Scanner;
 
-public class Calculator {
-
+    public class Calculator {
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Simple Calculator");
+        System.out.println("A Simple Calculator");
 
-        System.out.println("\nHere are your options:");
         System.out.println("\nInput 1 (Addition)");
         System.out.println("Input 2 (Subtraction)");
         System.out.println("Input 3 (Division)");
         System.out.println("Input 4 (Multiplication)");
         System.out.println("Input 5 (Modulo)");
-        System.out.println("Input 6 (Increment)");
+        System.out.println("Input 6 (Square Root)");
         System.out.println("\nWhat would you like to do?: ");
         
         int choice = sc.nextInt();
@@ -39,109 +37,107 @@ public class Calculator {
             modulo();
         }
         else if (choice == 6){
-            increment();
+            SquareRoot();
         }
-        System.out.println();
         sc.close();
     }
 
     public static void addition(){
 
-        int input1, input2;
+        long input1, input2;
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Addition");
-        System.out.print("\n===========================");
+        System.out.print("==============================");
         System.out.print("\nEnter The 1st Number: : ");
         input1 = sc.nextInt();
 
-        System.out.print("\n===========================");
+        System.out.print("==============================");
         System.out.print("\nEnter The 2nd Number: : ");
         input2 = sc.nextInt();
 
-        System.out.print("\n===========================");
+        System.out.print("===========================");
         System.out.println("\nSum: " + input1 + " + " + input2 + " = " + (input1 + input2));
     }
 
     public static void subtraction(){
-        int input1, input2;
+        long input1, input2;
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Subtraction");
-        System.out.print("\n===========================");
+        System.out.print("==============================");
         System.out.print("\nEnter The 1st Number: : ");
         input1 = sc.nextInt();
 
-        System.out.print("\n===========================");
+        System.out.print("==============================");
         System.out.print("\nEnter The 2nd Number: : ");
         input2 = sc.nextInt();
 
-        System.out.print("\n===========================");
+        System.out.print("==============================");
         System.out.println("\nSum: " + input1 + " - " + input2 + " = " + (input1 - input2));
     }
 
     public static void division(){
-        int input1, input2;
+        long input1, input2;
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Division");
-        System.out.print("\n===========================");
+        System.out.print("==============================");
         System.out.print("\nEnter The 1st Number: : ");
         input1 = sc.nextInt();
 
-        System.out.print("\n===========================");
+        System.out.print("==============================");
         System.out.print("\nEnter The 2nd Number: : ");
         input2 = sc.nextInt();
 
-        System.out.print("\n===========================");
+        System.out.print("==============================");
         System.out.println("\nSum: " + input1 + " / " + input2 + " = " + (input1 / input2));
     }
 
     public static void multiplication(){
-        int input1, input2;
+        long input1, input2;
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Multiplication");
-        System.out.print("\n===========================");
+        System.out.print("==============================");
         System.out.print("\nEnter The 1st Number: : ");
         input1 = sc.nextInt();
 
-        System.out.print("\n===========================");
+        System.out.print("==============================");
         System.out.print("\nEnter The 2nd Number: : ");
         input2 = sc.nextInt();
 
-        System.out.print("\n===========================");
+        System.out.print("==============================");
         System.out.println("\nSum: " + input1 + " x " + input2 + " = " + (input1 * input2));
     }
 
     public static void modulo() {
-        int input1, input2;
+        long input1, input2;
         Scanner sc = new Scanner(System.in);
         
         System.out.println("Modulo");
-        System.out.print("\n===========================");
+        System.out.print("==============================");
         System.out.print("\nEnter The 1st Number: : ");
         input1 = sc.nextInt();
         
-        System.out.print("\n===========================");
+        System.out.print("==============================");
         System.out.print("\nEnter The 2nd Number: : ");
         input2 = sc.nextInt();
         
-        System.out.print("\n===========================");
+        System.out.print("==============================");
         System.out.println("\nSum: " + input1 + " % " + input2 + " = " + (input1 % input2));
         
     }
     
-    public static void increment() {
-        int input1;
+    public static void SquareRoot() {
+        long input1;
         Scanner sc = new Scanner(System.in);
         
-        System.out.println("Increment");
-        System.out.print("\n===========================");
-        System.out.print("\nEnter The 1st Number: : ");
+        System.out.println("Square Root");
+        System.out.print("==============================");
+        System.out.print("\nEnter a Number: : ");
         input1 = sc.nextInt();
     
-        System.out.print("\n===========================");
-        System.out.println("\nSum: " + "++" + input1 + " = " + (++input1));
+        System.out.println(Math.sqrt(input1));
     }
 }
