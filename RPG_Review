@@ -1,0 +1,57 @@
+package rrpg;
+
+public class TestCharacter {
+   public static void main(String args[]) {
+
+
+        Character p1 = new Character("Anna", 5,15,20);
+        Character p2 = new Character("Elsa", 5,15,20);
+
+
+        for(int i = 1; p1.getCurrentLife() >= 0 && p2.getCurrentLife() >= 0; i++){
+
+            System.out.println();
+            System.out.println("Round: " + i);
+            System.out.println(p1.getName() + ":" + p1.getCurrentLife());
+            System.out.println(p2.getName() + ":" + p2.getCurrentLife());  
+
+
+            int a = p1.attack();
+            p2.wound(a);
+            int b = p2.attack();
+            p1.wound(b);
+
+            System.out.println(p1.getName() + " attacks " + p2.getName() + " for " + a);
+            System.out.println(p2.getName() + " attacks " + p1.getName() + " for " + b);
+
+
+            if(p1.getCurrentLife() <= 0 && p2.getCurrentLife() <= 0){
+
+                System.out.println(p2.getName() + "'s Health: " + p2.getCurrentLife());
+                System.out.println(p1.getName() + "'s Health: " + p1.getCurrentLife());
+                System.out.println("");
+                System.out.println("Its a draw. The fighters will see again to the nex fight!!!");
+                break;
+            }
+
+            else if(p1.getCurrentLife() <= 0){
+                System.out.println(p2.getName() + "'s Health: " + p2.getCurrentLife());
+                System.out.println(p1.getName() + "'s Health: " + p1.getCurrentLife());
+                System.out.println("");
+                System.out.println(p2.getName() + " Wins\n"
+                        + p2.getName() + " will go to the next round.");
+                break;
+            }
+
+            else if(p2.getCurrentLife() <= 0){
+                System.out.println(p2.getName() + "'s Health: " + p2.getCurrentLife());
+                System.out.println(p1.getName() + "'s Health: " + p1.getCurrentLife()); 
+                System.out.println("");
+                System.out.println(p1.getName() + " Wins\n"
+                    + p2.getName() + " will go to the next round.");
+                break;
+            }
+        }
+   }
+}
+
