@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class Search_Element {
+    public static void main(String[] args) {
+    
+        int n, x, G = 0, i = 0;
+        int ctr = 0;
+        Scanner s = new Scanner(System.in);
+        
+        System.out.println("============================================="); ctr++;
+        System.out.print("Enter no. of elements you want in array: "); ctr++;
+        n = s.nextInt(); ctr++;
+     
+        int a[] = new int[n]; ctr++;
+        int c = 0; ctr++;
+        System.out.println("============================================="); ctr++;
+        System.out.println("Enter all the elements:"); ctr++;
+        
+        for(i = 0; i < n; i++) { ctr++;
+            a[i] = s.nextInt(); ctr++;
+            c++; ctr++;
+        }
+        System.out.println("============================================="); ctr++;
+        System.out.print("Enter the element you want to find: "); ctr++;
+        
+        x = s.nextInt(); ctr++;
+        for(i = 0; i < n; i++) { ctr++;
+            if(a[i] == x) { ctr++;
+                G = 1; ctr++;
+                break; 
+            } 
+            else ctr++;
+            {
+                G = 0; ctr++;
+            }
+        }
+        if(G == 1) 
+        { ctr++;
+            System.out.println("============================================="); ctr++;
+            System.out.println("Element found at position: "+(i)); ctr++;
+            System.out.println("============================================="); ctr++;
+            
+        } 
+        else
+        {
+            System.out.println("Element cannot be Found");
+            System.out.println("============================================="); ctr++;
+        }
+        System.out.println("Number of Elements: " + c++); ctr++;
+        System.out.println("============================================="); ctr++;
+        System.out.println("Frequency Count: " + ctr);
+        System.out.println("============================================="); ctr++;
+    }
+}
