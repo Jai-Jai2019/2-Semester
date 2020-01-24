@@ -1,0 +1,48 @@
+package Characters;
+
+public class Characters {
+    
+    static Dice dice = new Dice();
+    private int strength ,maxLife,currentLife;
+    String characterName;
+    
+    public Characters(){
+        //Di ko sure kung dapat bang i dice tong part na toh pero ganito ata ginawa ko
+        // kasi sa lecture sinabi nya may set set pa. Pero baka sa name lang yon
+        
+        strength = 0;
+        characterName = "";
+
+        maxLife = dice.roll()+20;
+        currentLife = maxLife;
+    }
+    
+    public int attack(){
+        return dice.roll() + strength;
+    }
+    public void wound(int damage){
+        currentLife -= damage;
+    }
+    public void heal(int heal){
+        if(currentLife + heal > maxLife)
+            currentLife = maxLife;
+        else
+            currentLife += heal;
+    }
+    public String getName(){
+        return this.characterName;
+    }
+    //Di namna kailangan "this." kasi alam mo na yun misha.
+    public int getStrength(){
+        return dice.roll();
+    }
+    public int getCurrentLife(){
+        return this.currentLife;
+    }
+    public int getMaxLife(){
+        return maxLife;
+    }
+    public void setName(String newName){
+        this.characterName = newName;
+    }
+}
