@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+public class arryAddress {
+    public static void main(String[]args){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Input Dimension : ");
+        
+        int arrSize = input.nextInt();
+        int check = 0 , tempProd = 0, tempSum = 0 , finalSum = 0, inc = 1, altSum = 0;
+        int ans = 0;
+        int a = 1, b = 1, c = 1, ebyte = 0;
+        int index1=1;
+        
+        
+        double storeM = 0;
+        double storeA = 0;
+        double finalAdd = 0;
+        double totalelem = 1;
+        
+        String tempStr;
+        
+        int array1[] = new int[arrSize];
+        int array2[] = new int[arrSize];
+        
+        for(int i = 0; i < arrSize; i++){
+            System.out.println("Enter UB" + a + " : ");
+            array1[i] = input.nextInt();
+            a++;
+            totalelem + = array1[i];
+            Double.valueOf(array1[i]);
+        }
+        System.out.println("Enter Starting adress : ");
+        int start = input.nextInt();
+        System.out.println("Enter Esize : ");
+        ebyte = input.nextInt();
+        System.out.println("Total number of Elements int the Array: " + totalelem);
+        System.out.println("\n***SEARCH FOR MEMORT ADRESS OF ith ELEMENT\n");
+        
+        for(int x = 0; x < arrSize; x++){
+            do{
+                check = 0 ; //guess
+                System.out.println("Input search index at dimension" + (x+1)+":");
+                array2[x] = input.nextInt();
+                if(array2[x]>array1[x]||array2[x]<0){
+                    System.out.println("Error. Out of bounds of dimension.");
+                    check =1;
+                }
+                }while(check == 1);
+        }
+        for (int x = 0 ; x<arrSize;x++){
+            storeM = array2[x];
+            
+            for(int y = c;y<arrSize; y++){
+                storeM = storeM*array1[y];                
+            }
+            c++;
+            storeA = storeA+storeM;
+        }
+        finalAdd = (start + (storeA*(ebyte)));
+        System.out.println("MEMORY ADRESS: " + finalAdd + "\nDone.");     
+    }  
+}
