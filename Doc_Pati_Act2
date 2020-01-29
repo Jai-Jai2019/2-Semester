@@ -1,138 +1,139 @@
   import java.util.Scanner;
   
-  public class Record {
-  static Scanner sc = new Scanner(System.in);
+    public class Main {
+    static Scanner sc = new Scanner(System.in);
 
-  // 121,4,5 120,3,3 char int,int
-
-  public static void main(String arg[]) {
+        public static void main(String arg[]) {
+            
+        System.out.println("Record Address Calculation\n");
+        int a, alpha, fnum;
+        int record[];
+            System.out.print("How many Fields: ");
+        
+        fnum = sc.nextInt();
+        int esize[] = new int[fnum];
+        int esizetype[] = new int[fnum];
+        for (int count = 0; count < fnum; count++) {
+            System.out.print("1. Char \t 2. Int\n3. Float\t 4. Double\nWhat field will be in #" + (count +1) + " :");
   
-  System.out.println("------I N P U T------");
-  int a, alpha, fnum;
-  int record[];
-  // fields and field size
-  System.out.print("Enter how many Fields? ");
-  fnum = sc.nextInt();
-  int esize[] = new int[fnum];
-  int esizetype[] = new int[fnum];
-  for (int count = 0; count < fnum; count++) {
-  System.out.println(
-  "1. char \t2. int\n3. float\t4. double\nWhat type will the number " + (count + 1) + " field be?");
-  int ftype = sc.nextInt();
-  esizetype[count] = ftype;
-  switch (ftype) {
-  case 1:
+        int ftype = sc.nextInt();
+            esizetype[count] = ftype;
+            
+            switch (ftype) {
+            case 1:
+    
+            esize[count] = 1;
+            break;
+            case 2:
+        
+            esize[count] = 2;
+            break;
+            case 3:
+        
+            esize[count] = 4;
+            break;
+            case 4:
+            
+            esize[count] = 8;
+            break;
+            default:
+            System.out.println("Try again");
+            count--;
+                }
+            }
 
-  esize[count] = 1;
-  break;
-  case 2:
+        System.out.print("\nEnter the desired dimesion: ");
+        a = sc.nextInt();
 
-  esize[count] = 2;
-  break;
-  case 3:
+        record = new int[a];
+        
+        for (int count = 0; count < a; count++) {
+            System.out.print("Enter the number " + (count + 1) + " dimension size: ");
+            record[count] = sc.nextInt();
+        }
 
-  esize[count] = 4;
-  break;
-  case 4:
+        System.out.print("\nThe Given record is: A");
+        
+        for (int i = 0; i < record.length; i++) {
+        System.out.print("[" + record[i] + "]");
+        }
+        System.out.println("\n");
 
-  esize[count] = 8;
-  break;
-  default:
-  System.out.println("Try again");
-  count--;
+        System.out.print("Enter Alpha Value to be used in the Address Calculation: ");
+        alpha = sc.nextInt();
+        System.out.println("Enter address to find");
+        
+        int recordToFind[] = new int[a];
+
+        for (int i = 0; i < a; i++) {
+            System.out.print("Enter A");
+        for (int j = 0; j <= i; j++) {
+            if (j < i) {
+            System.out.print("[" + recordToFind[j] + "]");
+        }     
+        else {
+        System.out.print("[?]: ");
+            }
+        }
+        recordToFind[i] = sc.nextInt();
+        }
+  
+        System.out.print("\nThe Address to find is: A");
+        for (
+            int i = 0; i < recordToFind.length; i++) {
+            System.out.print("[" + recordToFind[i] + "]");
+        }
+        System.out.println("\n");
+
+        long summation = 0;
+            for (int i = 0; i < recordToFind.length; i++) {
+                int product = recordToFind[i];
+                    for (int j = (i + 1); j < record.length; j++) {
+                    product = product * record[j];
+                }
+            summation = summation + product;
+        }
+
+        long sizetotal = 0;
+            for (int count = 0; count < esize.length; count++) {
+                sizetotal += esize[count];
+        }
+        long amma = alpha + (summation * sizetotal);
+  
+        System.out.println("What will you search?");
+        for (int count = 0; count < esize.length; count++) {
+            switch (esizetype[count]) {
+                
+                case 1:
+                System.out.println((count + 1) + ". char[" + esize[count] + "]");
+                break;
+                
+                case 2:
+                System.out.println((count + 1) + ". int");
+                break;
+                
+                case 3:
+                System.out.println((count + 1) + ". float");
+                break;
+                
+                case 4:
+                System.out.println((count + 1) + ". double");
+                break;
+                default:
+            }
+        }
+        int extra = sc.nextInt();
+            for (int count = 1; count < extra; count++) {
+                amma = amma + esize[(count - 1)];
+        }
+        System.out.println("The address calculation solution is: " + amma);
+        System.out.println("The total element: " + getTotalNumberOfElement(record));
     }
-  }
-  // input Dimension
-  System.out.print("Enter the desired dimesion: ");
-  a = sc.nextInt();
-  // input Dimension Sizes
-  record = new int[a];
-  for (int count = 0; count < a; count++) {
-  System.out.print("Enter the number " + (count + 1) + " dimension size: ");
-  record[count] = sc.nextInt();
-  }
-  // Display Dimension and Sizes
-  System.out.print("\nThe Given record is: A");
-  for (int i = 0; i < record.length; i++) {
-  System.out.print("[" + record[i] + "]");
-  }
-  System.out.println("\n");
-  // input Address
-  System.out.print("Enter Alpha Value to be used in the Address Calculation: ");
-  alpha = sc.nextInt();
-  System.out.println("Enter address to find");
-  int recordToFind[] = new int[a];
-
-  for (int i = 0; i < a; i++) {
-    System.out.print("Enter A");
-    for (int j = 0; j <= i; j++) {
-    if (j < i) {
-    System.out.print("[" + recordToFind[j] + "]");
-  } 
-  else {
-  System.out.print("[?]: ");
+    static int getTotalNumberOfElement(int[] arr) {
+        int sum = 1;
+            for (int c = 0; c < arr.length; c++) {
+                sum = sum * arr[c];
+            }
+        return sum;
     }
-  }
-  recordToFind[i] = sc.nextInt();
-  }
-  // Display the Address
-  System.out.print("\nThe Address to find is: A");
-  for (
-
-  int i = 0; i < recordToFind.length; i++) {
-  System.out.print("[" + recordToFind[i] + "]");
-  }
-  System.out.println("\n");
-  // Computation Address Calculation
-  long summation = 0;
-  for (int i = 0; i < recordToFind.length; i++) {
-    int product = recordToFind[i];
-    for (int j = (i + 1); j < record.length; j++) {
-    product = product * record[j];
-  }
-  summation = summation + product;
-  }
-  // compute e-size
-  long sizetotal = 0;
-  for (int count = 0; count < esize.length; count++) {
-    sizetotal += esize[count];
-  }
-  long amma = alpha + (summation * sizetotal);
-  // compute extra e-size
-  System.out.println("What will you search?");
-  for (int count = 0; count < esize.length; count++) {
-    switch (esizetype[count]) {
-    case 1:
-    System.out.println((count + 1) + ". char[" + esize[count] + "]");
-    break;
-    case 2:
-    System.out.println((count + 1) + ". int");
-    break;
-    case 3:
-    System.out.println((count + 1) + ". float");
-    break;
-    case 4:
-    System.out.println((count + 1) + ". double");
-    break;
-    default:
-    }
-  }
-  int extra = sc.nextInt();
-    for (int count = 1; count < extra; count++) {
-    amma = amma + esize[(count - 1)];
-  }
-  System.out.println("------The O U T P U T------");
-  // Output AddressCalculation
-  System.out.println("The address calculation solution is: " + amma);
-
-  // Output Total Number
-  System.out.println("The total number of element: " + getTotalNumberOfElement(record));
-  }
-  static int getTotalNumberOfElement(int[] arr) {
-    int sum = 1;
-    for (int c = 0; c < arr.length; c++) {
-    sum = sum * arr[c];
-      }
-    return sum;
-  }
 }
