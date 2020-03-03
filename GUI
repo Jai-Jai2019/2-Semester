@@ -1,0 +1,97 @@
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class BSTGooey {
+
+    public static void main(String[] args) {
+
+        // Instance of JFrame (Name)
+        JFrame frame = new JFrame ("Jai's Calculator");
+        
+        // Width and Length
+        frame.setSize (600,800);
+        
+        // To excecute the file
+        frame.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
+            
+        //Cannot Resize the Windows
+        frame.setResizable(false);
+        
+        //Buttons for Numbers
+        JButton butt0 = new JButton("0");
+        JButton butt1 = new JButton("1");
+        JButton butt2 = new JButton("2");
+        JButton butt3 = new JButton("3");
+        JButton butt4 = new JButton("4");
+        JButton butt5 = new JButton("5");
+        JButton butt6 = new JButton("6");
+        JButton butt7 = new JButton("7");
+        JButton butt8 = new JButton("8");
+        JButton butt9 = new JButton("9");
+        
+        //Buttons for Equations
+        JButton buttclear = new JButton("C");
+        JButton buttequals = new JButton("=");
+        JButton buttsquare = new JButton("√");
+        JButton buttplus = new JButton("+");
+        JButton buttminus = new JButton("-");
+        JButton buttdivide = new JButton("/");
+        JButton buttmultiply = new JButton("*");
+        JButton buttans = new JButton("ANS");
+        JButton buttn = new JButton("n!");
+        
+        //Button Size and Place
+       
+        //1st           |  -  L  W
+        butt7.setBounds(20,140,60,60);
+        butt4.setBounds(20,200,60,60);
+        butt1.setBounds(20,260,60,60);
+        buttclear.setBounds(20,320,60,60);
+        buttequals.setBounds(20,380,60,60);
+        buttsquare.setBounds(20,440,60,60);
+        
+        //2nd           |  -  L  W
+        butt8.setBounds(80,140,60,60);
+        butt5.setBounds(80,200,60,60);
+        butt2.setBounds(80,260,60,60);
+        butt0.setBounds(80,320,60,60);
+        buttans.setBounds(80,380,60,60);
+        buttn.setBounds(80,440,60,60);
+        
+        //3rd           |  -  L  W
+        butt9.setBounds(140,140,60,60);
+        butt6.setBounds(140,200,60,60);
+        butt3.setBounds(140,260,60,60);
+        
+        //4th               |  -  L  W
+        buttplus.setBounds(200,140,60,60);
+        buttminus.setBounds(200,200,60,60);
+        buttmultiply.setBounds(200,260,60,60);
+        buttdivide.setBounds(200,320,60,60);
+        
+        
+        //Shows the Button
+        frame.getContentPane().add(butt0);
+        frame.getContentPane().add(butt1);
+        frame.getContentPane().add(butt2);
+        frame.getContentPane().add(butt3);
+        frame.getContentPane().add(butt4);
+        frame.getContentPane().add(butt5);
+        frame.getContentPane().add(butt6);
+        frame.getContentPane().add(butt7);
+        frame.getContentPane().add(butt8);
+        frame.getContentPane().add(butt9);
+        
+        frame.getContentPane().add(buttclear);
+        frame.getContentPane().add(buttequals);
+        frame.getContentPane().add(buttsquare);
+        frame.getContentPane().add(buttplus);
+        frame.getContentPane().add(buttminus);
+        frame.getContentPane().add(buttdivide);
+        frame.getContentPane().add(buttmultiply);
+        frame.getContentPane().add(buttans);
+        frame.getContentPane().add(buttn);
+        //Shows the Table
+        frame.setVisible(true);
+    }
+}             
