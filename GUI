@@ -1,5 +1,6 @@
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class BSTGooey {
 
@@ -8,14 +9,27 @@ public class BSTGooey {
         // Instance of JFrame (Name)
         JFrame frame = new JFrame ("Jai's Calculator");
         
-        // Width and Length
-        frame.setSize (600,800);
+        //Text Field
+        JLabel Input = new JLabel("Input");
+        JTextField Input = new JTextField(20);
+        lblFName.setLabelFor(Input);
+ 
+        JLabel Output = new JLabel("Output");
+        JTextField Output = new JTextField(20);
+        lblLName.setLabelFor(Output);
         
-        // To excecute the file
-        frame.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
-            
-        //Cannot Resize the Windows
-        frame.setResizable(false);
+        JPanel panel = new JPanel();
+        panel.setLayout(new SpringLayout());
+ 
+        panel.add(Input);
+        panel.add(Output);
+        /*panel.add(Input);     extras pag need
+        panel.add(Output); */
+        
+        SpringUtilities.makeCompactGrid(panel,
+                2, 2,  //rows, cols
+                6, 6,  //initX, initY
+                6, 6); //xPad, yPad
         
         // Buttons
         //Line 1 
@@ -166,6 +180,12 @@ public class BSTGooey {
         frame.getContentPane().add(buttSortB);
         frame.getContentPane().add(buttClose);
         
+        // Width and Length
+        frame.setSize (600,800);
+        // To excecute the file
+        frame.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
+        //Cannot Resize the Windows
+        frame.setResizable(false);
         //Shows the Table
         frame.setVisible(true);
     }
