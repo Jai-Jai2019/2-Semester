@@ -22,25 +22,25 @@ public class BSTGooey {
         JButton butt7 = new JButton("7");
         JButton butt4 = new JButton("4");
         JButton butt1 = new JButton("1");
-        JButton buttclear = new JButton("C");
-        JButton buttequals = new JButton("=");
-        JButton buttsquare = new JButton("√");
+        JButton buttClear = new JButton("C");
+        JButton buttEquals = new JButton("=");
+        JButton buttSquare = new JButton("√");
         
         //Line 2
         JButton butt8 = new JButton("8");
         JButton butt5 = new JButton("5");
         JButton butt2 = new JButton("2");
         JButton butt0 = new JButton("0");
-        JButton buttans = new JButton("ᴀɴꜱ");
-        JButton buttn = new JButton("n!");
+        JButton buttAns = new JButton("ᴀɴꜱ");
+        JButton buttN = new JButton("ɴ!");
         
         //Line 3
         JButton butt3 = new JButton("3");
         JButton butt6 = new JButton("6");
         JButton butt9 = new JButton("9");
-        JButton buttarr = new JButton("🠔");
-        JButton buttsquared = new JButton("x²");
-        JButton buttdot = new JButton(".");
+        JButton buttArr = new JButton("🠔");
+        JButton buttSquared = new JButton("x²");
+        JButton buttDot = new JButton(".");
         
         //Line 4
         JButton buttPlus = new JButton("+");
@@ -60,82 +60,111 @@ public class BSTGooey {
         
         //Line 6
         JButton buttMean = new JButton("ᴍᴇᴀɴ");
-        JButton buttMedian = new JButton("ᴍᴇᴅɪᴀɴ");
         JButton buttMode = new JButton("ᴍᴏᴅᴇ");
+        JButton buttMedian = new JButton("ᴍᴇᴅɪᴀɴ");
         JButton buttSortA = new JButton("ꜱᴏʀᴛ ᴀ");
         JButton buttSortB = new JButton("ꜱᴏʀᴛ ʙ");
         JButton buttClose = new JButton("ᴄʟᴏꜱᴇ");
+        
         
         //Button Size and Place
         //1st           |  -  L  W
         butt7.setBounds(20,140,60,60);
         butt4.setBounds(20,200,60,60);
         butt1.setBounds(20,260,60,60);
-        buttclear.setBounds(20,320,60,60);
-        buttequals.setBounds(20,380,60,60);
-        buttsquare.setBounds(20,440,60,60);
+        buttClear.setBounds(20,320,60,60);
+        buttEquals.setBounds(20,380,60,60);
+        buttSquared.setBounds(20,440,60,60);
         
         //2nd           |  -  L  W
         butt8.setBounds(80,140,60,60);
         butt5.setBounds(80,200,60,60);
         butt2.setBounds(80,260,60,60);
         butt0.setBounds(80,320,60,60);
-        buttans.setBounds(80,380,60,60);
-        buttn.setBounds(80,440,60,60);
+        buttAns.setBounds(80,380,60,60);
+        buttN.setBounds(80,440,60,60);
         
         //3rd           |  -  L  W
         butt9.setBounds(140,140,60,60);
         butt6.setBounds(140,200,60,60);
         butt3.setBounds(140,260,60,60);
+        buttArr.setBounds(140,140,60,60);
+        buttSquared.setBounds(140,200,60,60);
+        buttDot.setBounds(140,260,60,60);
         
         //4th               |  -  L  W
-        buttplus.setBounds(200,140,60,60);
-        buttminus.setBounds(200,200,60,60);
-        buttmultiply.setBounds(200,260,60,60);
-        buttdivide.setBounds(200,320,60,60);
+        buttPlus.setBounds(200,140,60,60);
+        buttMinus.setBounds(200,200,60,60);
+        buttMultiply.setBounds(200,260,60,60);
+        buttDivide.setBounds(200,320,60,60);
+        buttXY.setBounds(200,200,60,60);
+        buttX.setBounds(200,260,60,60);
+
+        //5th               |  -  L  W
+        buttMax.setBounds(260,140,60,60);
+        buttMin.setBounds(260,200,60,60);
+        buttParL.setBounds(260,260,60,60);
+        buttParR.setBounds(260,320,60,60);
+        buttComma.setBounds(260,200,60,60);
+        buttFibo.setBounds(260,260,60,60);
+        
+        //6th               |  -  L  W
+        buttMean.setBounds(320,140,60,60);
+        buttMode.setBounds(320,200,60,60);
+        buttMedian.setBounds(320,260,60,60);
+        buttSortA.setBounds(320,320,60,60);
+        buttSortB.setBounds(320,200,60,60);
+        buttClose.setBounds(320,260,60,60);
         
         
         //Shows the Button
-        frame.getContentPane().add(butt0);
-        frame.getContentPane().add(butt1);
-        frame.getContentPane().add(butt2);
-        frame.getContentPane().add(butt3);
-        frame.getContentPane().add(butt4);
-        frame.getContentPane().add(butt5);
-        frame.getContentPane().add(butt6);
+        //Line 1
         frame.getContentPane().add(butt7);
+        frame.getContentPane().add(butt4);
+        frame.getContentPane().add(butt1);
+        frame.getContentPane().add(buttClear);
+        frame.getContentPane().add(buttEquals);
+        frame.getContentPane().add(buttSquared);
+        
+        //Line 2
         frame.getContentPane().add(butt8);
+        frame.getContentPane().add(butt5);
+        frame.getContentPane().add(butt2);
+        frame.getContentPane().add(butt0);
+        frame.getContentPane().add(buttAns);
+        frame.getContentPane().add(buttN);
+        
+        //Line 3
         frame.getContentPane().add(butt9);
+        frame.getContentPane().add(butt6);
+        frame.getContentPane().add(butt3);
+        frame.getContentPane().add(buttArr);
+        frame.getContentPane().add(buttSquared);
+        frame.getContentPane().add(buttDot);
         
-        frame.getContentPane().add(buttclear);
-        frame.getContentPane().add(buttequals);
-        frame.getContentPane().add(buttsquare);
-        frame.getContentPane().add(buttplus);
-        frame.getContentPane().add(buttminus);
-        frame.getContentPane().add(buttdivide);
-        frame.getContentPane().add(buttmultiply);
-        frame.getContentPane().add(buttans);
-        frame.getContentPane().add(buttn);
+        //Line 4
+        frame.getContentPane().add(buttPlus);
+        frame.getContentPane().add(buttMinus);
+        frame.getContentPane().add(buttMultiply);
+        frame.getContentPane().add(buttDivide);
+        frame.getContentPane().add(buttXY);
+        frame.getContentPane().add(buttX);
+
+        //Line 5
+        frame.getContentPane().add(buttMax);
+        frame.getContentPane().add(buttMin);
+        frame.getContentPane().add(buttParL);
+        frame.getContentPane().add(buttParR);
+        frame.getContentPane().add(buttComma);
+        frame.getContentPane().add(buttFibo);
         
-        frame.getContentPane().add(buttclear);
-        frame.getContentPane().add(buttequals);
-        frame.getContentPane().add(buttsquare);
-        frame.getContentPane().add(buttplus);
-        frame.getContentPane().add(buttminus);
-        frame.getContentPane().add(buttdivide);
-        frame.getContentPane().add(buttmultiply);
-        frame.getContentPane().add(buttans);
-        frame.getContentPane().add(buttn);
-        
-        frame.getContentPane().add(buttclear);
-        frame.getContentPane().add(buttequals);
-        frame.getContentPane().add(buttsquare);
-        frame.getContentPane().add(buttplus);
-        frame.getContentPane().add(buttminus);
-        frame.getContentPane().add(buttdivide);
-        frame.getContentPane().add(buttmultiply);
-        frame.getContentPane().add(buttans);
-        frame.getContentPane().add(buttn);
+        //Line 6
+        frame.getContentPane().add(buttMean);
+        frame.getContentPane().add(buttMode);
+        frame.getContentPane().add(buttMedian);
+        frame.getContentPane().add(buttSortA);
+        frame.getContentPane().add(buttSortB);
+        frame.getContentPane().add(buttClose);
         
         //Shows the Table
         frame.setVisible(true);
