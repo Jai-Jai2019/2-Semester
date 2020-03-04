@@ -17,31 +17,55 @@ public class BSTGooey {
         //Cannot Resize the Windows
         frame.setResizable(false);
         
-        //Buttons for Numbers
-        JButton butt0 = new JButton("0");
-        JButton butt1 = new JButton("1");
-        JButton butt2 = new JButton("2");
-        JButton butt3 = new JButton("3");
-        JButton butt4 = new JButton("4");
-        JButton butt5 = new JButton("5");
-        JButton butt6 = new JButton("6");
+        // Buttons
+        //Line 1 
         JButton butt7 = new JButton("7");
-        JButton butt8 = new JButton("8");
-        JButton butt9 = new JButton("9");
-        
-        //Buttons for Equations
+        JButton butt4 = new JButton("4");
+        JButton butt1 = new JButton("1");
         JButton buttclear = new JButton("C");
         JButton buttequals = new JButton("=");
         JButton buttsquare = new JButton("√");
-        JButton buttplus = new JButton("+");
-        JButton buttminus = new JButton("-");
-        JButton buttdivide = new JButton("/");
-        JButton buttmultiply = new JButton("*");
+        
+        //Line 2
+        JButton butt8 = new JButton("8");
+        JButton butt5 = new JButton("5");
+        JButton butt2 = new JButton("2");
+        JButton butt0 = new JButton("0");
         JButton buttans = new JButton("ANS");
         JButton buttn = new JButton("n!");
         
+        //Line 3
+        JButton butt3 = new JButton("3");
+        JButton butt6 = new JButton("6");
+        JButton butt9 = new JButton("9");
+        JButton buttarr = new JButton("🠔");
+        JButton buttsquared = new JButton("x²");
+        JButton buttdot = new JButton(".");
+        
+        //Line 4
+        JButton buttPlus = new JButton("+");
+        JButton buttMinus = new JButton("-");
+        JButton buttMultiply = new JButton("*");
+        JButton buttDivide = new JButton("/");
+        JButton buttXY = new JButton("xʸ");
+        JButton buttX = new JButton("|x|");
+        
+        //Line 5
+        JButton buttMax = new JButton("ᴍ");
+        JButton buttMin = new JButton("ᴍ");
+        JButton buttParL = new JButton("(");
+        JButton buttParR = new JButton(")");
+        JButton buttComma = new JButton(",");
+        JButton buttFibo = new JButton("");
+        
+        //Line 6
+        JButton buttMode = new JButton("ᴍ");
+        JButton buttMedian = new JButton("ᴍ");
+        JButton buttSortA = new JButton("/");
+        JButton buttSortB = new JButton("*");
+        JButton buttClose = new JButton("ANS");
+        
         //Button Size and Place
-       
         //1st           |  -  L  W
         butt7.setBounds(20,140,60,60);
         butt4.setBounds(20,200,60,60);
@@ -91,6 +115,27 @@ public class BSTGooey {
         frame.getContentPane().add(buttmultiply);
         frame.getContentPane().add(buttans);
         frame.getContentPane().add(buttn);
+        
+        frame.getContentPane().add(buttclear);
+        frame.getContentPane().add(buttequals);
+        frame.getContentPane().add(buttsquare);
+        frame.getContentPane().add(buttplus);
+        frame.getContentPane().add(buttminus);
+        frame.getContentPane().add(buttdivide);
+        frame.getContentPane().add(buttmultiply);
+        frame.getContentPane().add(buttans);
+        frame.getContentPane().add(buttn);
+        
+        frame.getContentPane().add(buttclear);
+        frame.getContentPane().add(buttequals);
+        frame.getContentPane().add(buttsquare);
+        frame.getContentPane().add(buttplus);
+        frame.getContentPane().add(buttminus);
+        frame.getContentPane().add(buttdivide);
+        frame.getContentPane().add(buttmultiply);
+        frame.getContentPane().add(buttans);
+        frame.getContentPane().add(buttn);
+        
         //Shows the Table
         frame.setVisible(true);
     }
