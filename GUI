@@ -31,7 +31,7 @@ public class BSTGooey {
         JButton butt5 = new JButton("5");
         JButton butt2 = new JButton("2");
         JButton butt0 = new JButton("0");
-        JButton buttans = new JButton("ANS");
+        JButton buttans = new JButton("ᴀɴꜱ");
         JButton buttn = new JButton("n!");
         
         //Line 3
@@ -51,19 +51,20 @@ public class BSTGooey {
         JButton buttX = new JButton("|x|");
         
         //Line 5
-        JButton buttMax = new JButton("ᴍ");
-        JButton buttMin = new JButton("ᴍ");
+        JButton buttMax = new JButton("ᴍᴀx");
+        JButton buttMin = new JButton("ᴍɪɴ");
         JButton buttParL = new JButton("(");
         JButton buttParR = new JButton(")");
         JButton buttComma = new JButton(",");
-        JButton buttFibo = new JButton("");
+        JButton buttFibo = new JButton("ᴏ");
         
         //Line 6
-        JButton buttMode = new JButton("ᴍ");
-        JButton buttMedian = new JButton("ᴍ");
-        JButton buttSortA = new JButton("/");
-        JButton buttSortB = new JButton("*");
-        JButton buttClose = new JButton("ANS");
+        JButton buttMean = new JButton("ᴍᴇᴀɴ");
+        JButton buttMedian = new JButton("ᴍᴇᴅɪᴀɴ");
+        JButton buttMode = new JButton("ᴍᴏᴅᴇ");
+        JButton buttSortA = new JButton("ꜱᴏʀᴛ ᴀ");
+        JButton buttSortB = new JButton("ꜱᴏʀᴛ ʙ");
+        JButton buttClose = new JButton("ᴄʟᴏꜱᴇ");
         
         //Button Size and Place
         //1st           |  -  L  W
