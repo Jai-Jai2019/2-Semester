@@ -1,36 +1,35 @@
+import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class BSTGooey {
-
+    
+    static JTextField one, two;
+    
+    calculator() 
+    { 
+        s0 = s1 = s2 = ""; 
+    } 
+    
     public static void main(String[] args) {
 
+        
+        calculator c = new calculator(); 
         // Instance of JFrame (Name)
         JFrame frame = new JFrame ("Jai's Calculator");
+        JPanel p = new JPanel(); 
         
-        //Text Field
-        JLabel Input = new JLabel("Input");
-        JTextField Input = new JTextField(20);
-        lblFName.setLabelFor(Input);
- 
-        JLabel Output = new JLabel("Output");
-        JTextField Output = new JTextField(20);
-        lblLName.setLabelFor(Output);
-        
-        JPanel panel = new JPanel();
-        panel.setLayout(new SpringLayout());
- 
-        panel.add(Input);
-        panel.add(Output);
-        /*panel.add(Input);     extras pag need
-        panel.add(Output); */
-        
-        SpringUtilities.makeCompactGrid(panel,
-                2, 2,  //rows, cols
-                6, 6,  //initX, initY
-                6, 6); //xPad, yPad
-        
+        //Creating a TextField
+        one = new JTextField(29);
+        two = new JTextField(29);
+        //Cannot Edit the TextField
+        one.setEditable(false);
+        two.setEditable(false);
+        //Add Pane 
+        p.add(one); 
+        p.add(two);               
         // Buttons
         //Line 1 
         JButton butt7 = new JButton("7");
@@ -38,13 +37,13 @@ public class BSTGooey {
         JButton butt1 = new JButton("1");
         JButton buttClear = new JButton("C");
         JButton buttEquals = new JButton("=");
-        JButton buttSquare = new JButton("√");
+        JButton buttSquared = new JButton("√");
         
         //Line 2
         JButton butt8 = new JButton("8");
         JButton butt5 = new JButton("5");
         JButton butt2 = new JButton("2");
-        JButton butt0 = new JButton("0");
+        JButton butt0 = new JButton("Ø");
         JButton buttAns = new JButton("ᴀɴꜱ");
         JButton buttN = new JButton("ɴ!");
         
@@ -52,8 +51,8 @@ public class BSTGooey {
         JButton butt3 = new JButton("3");
         JButton butt6 = new JButton("6");
         JButton butt9 = new JButton("9");
-        JButton buttArr = new JButton("🠔");
-        JButton buttSquared = new JButton("x²");
+        JButton buttArr = new JButton("←");
+        JButton buttX2 = new JButton("x²");
         JButton buttDot = new JButton(".");
         
         //Line 4
@@ -70,7 +69,7 @@ public class BSTGooey {
         JButton buttParL = new JButton("(");
         JButton buttParR = new JButton(")");
         JButton buttComma = new JButton(",");
-        JButton buttFibo = new JButton("ᴏ");
+        JButton buttFibo = new JButton("ꜰɪʙᴏ");
         
         //Line 6
         JButton buttMean = new JButton("ᴍᴇᴀɴ");
@@ -102,34 +101,33 @@ public class BSTGooey {
         butt9.setBounds(140,140,60,60);
         butt6.setBounds(140,200,60,60);
         butt3.setBounds(140,260,60,60);
-        buttArr.setBounds(140,140,60,60);
-        buttSquared.setBounds(140,200,60,60);
-        buttDot.setBounds(140,260,60,60);
+        buttArr.setBounds(140,320,60,60);
+        buttX2.setBounds(140,380,60,60);
+        buttDot.setBounds(140,440,60,60);
         
         //4th               |  -  L  W
         buttPlus.setBounds(200,140,60,60);
         buttMinus.setBounds(200,200,60,60);
         buttMultiply.setBounds(200,260,60,60);
         buttDivide.setBounds(200,320,60,60);
-        buttXY.setBounds(200,200,60,60);
-        buttX.setBounds(200,260,60,60);
+        buttXY.setBounds(200,380,60,60);
+        buttX.setBounds(200,440,60,60);
 
         //5th               |  -  L  W
         buttMax.setBounds(260,140,60,60);
         buttMin.setBounds(260,200,60,60);
         buttParL.setBounds(260,260,60,60);
         buttParR.setBounds(260,320,60,60);
-        buttComma.setBounds(260,200,60,60);
-        buttFibo.setBounds(260,260,60,60);
+        buttComma.setBounds(260,380,60,60);
+        buttFibo.setBounds(260,440,60,60);
         
         //6th               |  -  L  W
         buttMean.setBounds(320,140,60,60);
         buttMode.setBounds(320,200,60,60);
         buttMedian.setBounds(320,260,60,60);
         buttSortA.setBounds(320,320,60,60);
-        buttSortB.setBounds(320,200,60,60);
-        buttClose.setBounds(320,260,60,60);
-        
+        buttSortB.setBounds(320,380,60,60);
+        buttClose.setBounds(320,440,60,60);
         
         //Shows the Button
         //Line 1
@@ -153,7 +151,7 @@ public class BSTGooey {
         frame.getContentPane().add(butt6);
         frame.getContentPane().add(butt3);
         frame.getContentPane().add(buttArr);
-        frame.getContentPane().add(buttSquared);
+        frame.getContentPane().add(buttX2);
         frame.getContentPane().add(buttDot);
         
         //Line 4
@@ -179,9 +177,32 @@ public class BSTGooey {
         frame.getContentPane().add(buttSortA);
         frame.getContentPane().add(buttSortB);
         frame.getContentPane().add(buttClose);
+
+        //Add ActionListener
+        butt1.addActionListener(c); 
+        bd.addActionListener(c); 
+        bs.addActionListener(c); 
+        ba.addActionListener(c); 
+        b9.addActionListener(c); 
+        b8.addActionListener(c); 
+        b7.addActionListener(c); 
+        b6.addActionListener(c); 
+        b5.addActionListener(c); 
+        b4.addActionListener(c); 
+        b3.addActionListener(c); 
+        b2.addActionListener(c); 
+        b1.addActionListener(c); 
+        b0.addActionListener(c); 
+        be.addActionListener(c); 
+        beq.addActionListener(c); 
+        beq1.addActionListener(c); 
         
+        //add Panel
+        frame.add(p);
+        //Color Blue
+        p.setBackground(Color.pink);
         // Width and Length
-        frame.setSize (600,800);
+        frame.setSize (400,550);
         // To excecute the file
         frame.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
         //Cannot Resize the Windows
