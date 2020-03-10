@@ -2,94 +2,53 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class JavaCalculator extends JFrame {
+public class GUICalculator extends JFrame {
 
+    public static void main(String[] args) {
+
+        GUICalculator calcu = new GUICalculator();
+        //
+        calcu.pack();
+        //
+        calcu.setLocationRelativeTo(null);
+        //Resize is in False
+        calcu.setResizable(true);
+        //Close the Program
+        calcu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //Shows the Table
+        calcu.setVisible(true);
+    }
+    
     //Line 1
-    private JButton butt7, butt8, butt9, buttPlus, buttMax, buttMean;
+    public JButton butt7, butt8, butt9, buttPlus, buttMax, buttMean;
     //Line 2
-    private JButton butt4, butt5, butt6, buttMinus, buttMin, buttMode;
+    public JButton butt4, butt5, butt6, buttMinus, buttMin, buttMode;
     //Line 3
-    
+    public JButton butt1, butt2, butt3, buttMultiply, buttParL, buttMedian;
     //Line 4
-    
+    public JButton buttClear, butt0, buttErase, buttDivide, buttParR, buttSortA;
     //Line 5
-    
+    public JButton buttEquals, buttAns, buttX2, buttXY, buttComma, buttSortD;
     //Line 6
+    public JButton buttSquared, buttN, buttDot, buttX, buttFibo, buttClose;
     
-    private JButton Equal;
-    private JButton Add;
-    private JButton Subtract;
-    private JButton Multiply;
-    private JButton Divide;
-    private JButton Solve;
-    private JButton Clear;
-    private double TEMP;
-    private double SolveTEMP;
+    
+    public JButton Equal, Add, Subtract,Multiply, Divide,Equals,Clear;
+    private double TEMP, EqualsTEMP;
+    
     private JTextField jtfResult;
 
-    Boolean addBool = false;
-    Boolean subBool = false;
-    Boolean divBool = false;
-    Boolean mulBool = false;
+    Boolean addBool,subBool, divBool, MultiplyBool, MaxBool = false;
+    
 
     String display = "";
 
-    public JavaCalculator() {
+    public GUICalculator() {
 
-        JPanel p = new JPanel();
-        p.setLayout(new GridLayout(4, 3));
+        //Panel
+        JPanel p1 = new JPanel();
+        p1.setLayout(new GridLayout(6, 1));
         
-        //Line 1
-        p.add(butt7 = new JButton("7"));
-        p.add(butt8 = new JButton("8"));
-        p.add(butt9 = new JButton("9"));
-        p.add(buttPlus = new JButton("+"));
-        p.add(buttMax = new JButton("ᴍᴀx"));
-        p.add(buttMean = new JButton("ᴍᴇᴀɴ"));
-        
-        //Line 2
-        p.add(butt7 = new JButton("4"));
-        p.add(butt8 = new JButton("5"));
-        p.add(butt9 = new JButton("6"));
-        p.add(buttMinus = new JButton("-"));
-        p.add(buttMin= new JButton("ᴍɪɴ"));
-        p.add(buttMode = new JButton("ᴍᴏᴅᴇ"));
-        
-        //Line 3
-        p.add(butt1 = new JButton("1"));
-        p.add(butt2 = new JButton("2"));
-        p.add(butt3 = new JButton("3"));
-        p.buttMultiply = new JButton("*");
-        p.add(butt17 = new JButton("9"));
-        p.add(butt18 = new JButton("9"));
-        
-        //Line 4
-        p.add(butt19 = new JButton("C"));
-        p.add(Clear20 = new JButton("0"));
-        p.add(butt21 = new JButton("9"));
-        p.add(butt3 = new JButton("9"));
-        p.add(butt3 = new JButton("9"));
-        p.add(butt3 = new JButton("9"));
-        p.add(butt3 = new JButton("9"));
-        
-        //Line 5
-        p.add(butt3 = new JButton("9"));
-        p.add(butt3 = new JButton("9"));
-        p.add(butt3 = new JButton("9"));
-        p.add(butt3 = new JButton("9"));
-        p.add(butt3 = new JButton("9"));
-        p.add(butt3 = new JButton("9"));
-        
-        //Line 6
-        p.add(butt3 = new JButton("9"));
-        p.add(butt3 = new JButton("9"));
-        p.add(butt3 = new JButton("9"));
-        p.add(butt3 = new JButton("9"));
-        p.add(butt3 = new JButton("9"));
-        p.add(butt3 = new JButton("9"));
-        
-        
-
         JPanel p2 = new JPanel();
         p2.setLayout(new FlowLayout());
         p2.add(jtfResult = new JTextField(20));
@@ -97,134 +56,210 @@ public class JavaCalculator extends JFrame {
         jtfResult.setEditable(false);
 
         JPanel p3 = new JPanel();
-        p3.setLayout(new GridLayout(5, 1));
+        p3.setLayout(new GridLayout(6, 1));
         p3.add(Add = new JButton("+"));
         p3.add(Subtract = new JButton("-"));
         p3.add(Multiply = new JButton("*"));
         p3.add(Divide = new JButton("/"));
-        p3.add(Solve = new JButton("="));
+        p3.add(Equals = new JButton("="));
 
-        JPanel p4 = new JPanel();
-        p4.setLayout(new GridLayout());
-        p4.add(p2, BorderLayout.NORTH);
-        p4.add(p, BorderLayout.SOUTH);
-        p4.add(p3, BorderLayout.EAST);
+        JPanel p = new JPanel();
+        p.setLayout(new GridLayout());
+        p.add(p2, BorderLayout.NORTH);
+        p.add(p1, BorderLayout.SOUTH);
+        p.add(p3, BorderLayout.EAST);
 
         add(p);
+            
+        //Line 1
+        p1.add(butt7 = new JButton("7"));
+        p1.add(butt8 = new JButton("8"));
+        p1.add(butt9 = new JButton("9"));
+        p1.add(buttPlus = new JButton("+"));
+        p1.add(buttMax = new JButton("ᴍᴀx"));
+        p1.add(buttMean = new JButton("ᴍᴇᴀɴ"));
+        
+        //Line 2
+        p1.add(butt7 = new JButton("4"));
+        p1.add(butt8 = new JButton("5"));
+        p1.add(butt9 = new JButton("6"));
+        p1.add(buttMinus = new JButton("-"));
+        p1.add(buttMin= new JButton("ᴍɪɴ"));
+        p1.add(buttMode = new JButton("ᴍᴏᴅᴇ"));
+        
+        //Line 3
+        p1.add(butt1 = new JButton("1"));
+        p1.add(butt2 = new JButton("2"));
+        p1.add(butt3 = new JButton("3"));
+        p1.add(buttMultiply = new JButton("*"));
+        p1.add(buttParL = new JButton("("));
+        p1.add(buttMedian = new JButton("ᴍᴇᴅɪᴀɴ"));
+        
+        //Line 4
+        p1.add(buttClear = new JButton("C"));
+        p1.add(butt0 = new JButton("Ø"));
+        p1.add(buttErase = new JButton("←"));
+        p1.add(buttDivide = new JButton("/"));
+        p1.add(buttParR = new JButton(")"));
+        p1.add(buttSortA = new JButton("ꜱᴏʀᴛ ᴀ"));
 
-        butt1.addActionListener(new ListenToOne());
-        butt2.addActionListener(new ListenToTwo());
-        butt3.addActionListener(new ListenToThree());
-        butt4.addActionListener(new ListenToFour());
-        butt5.addActionListener(new ListenToFive());
-        butt6.addActionListener(new ListenToSix());
-        butt7.addActionListener(new ListenToSeven());
-        butt8.addActionListener(new ListenToEight());
-        butt9.addActionListener(new ListenToNine());
-        butt0.addActionListener(new ListenToZero());
-
-        Add.addActionListener(new ListenToAdd());
-        Subtract.addActionListener(new ListenToSubtract());
-        Multiply.addActionListener(new ListenToMultiply());
-        Divide.addActionListener(new ListenToDivide());
-        Solve.addActionListener(new ListenToSolve());
-        Clear.addActionListener(new ListenToClear());
+        //Line 5
+        p1.add(buttEquals = new JButton("="));
+        p1.add(buttAns = new JButton("ᴀɴꜱ"));
+        p1.add(buttX2 = new JButton("x²"));
+        p1.add(buttXY = new JButton("9"));
+        p1.add(buttComma = new JButton("xʸ"));
+        p1.add(buttSortD = new JButton("ꜱᴏʀᴛ ᴅ"));
+        
+        //Line 6
+        p1.add(buttSquared = new JButton("√"));
+        p1.add(buttN = new JButton("ɴ!"));
+        p1.add(buttDot = new JButton("."));
+        p1.add(buttX = new JButton("|x|"));
+        p1.add(buttFibo = new JButton("ꜰɪʙᴏ"));
+        p1.add(buttClose = new JButton("ᴄʟᴏꜱᴇ"));
+        
+        
+        //Line 1
+        butt7.addActionListener(new Seven());
+        butt8.addActionListener(new Eight());
+        butt9.addActionListener(new Nine());
+        buttPlus.addActionListener(new Plus());
+        buttMax.addActionListener(new Max());
+        buttMean.addActionListener(new Mean());
+        
+        //Line 2
+        butt4.addActionListener(new Four());
+        butt5.addActionListener(new Five());
+        butt6.addActionListener(new Six());
+        buttMinus.addActionListener(new Minus());
+        buttMin.addActionListener(new Min());
+        buttMode.addActionListener(new Mode());
+        
+        //Line 3
+        butt1.addActionListener(new One());
+        butt2.addActionListener(new Two());
+        butt3.addActionListener(new Three());
+        buttMultiply.addActionListener(new Multiply());
+        buttParL.addActionListener(new ParL());
+        buttMedian.addActionListener(new Median());
+        
+        //Line 4
+        buttClear.addActionListener(new Clear());
+        butt0.addActionListener(new Zero());
+        buttErase.addActionListener(new Three());
+        buttDivide.addActionListener(new Divide());
+        buttParR.addActionListener(new ParR());
+        buttSortA.addActionListener(new SortA());
+        
+        /*Line 5
+        buttEquals.addActionListener(new Equals());
+        buttAns.addActionListener(new Ans());
+        buttX2.addActionListener(new X2());
+        buttXY.addActionListener(new XY());
+        buttComma.addActionListener(new Comma());
+        buttSortD.addActionListener(new SortD());
+        
+        //Line 6
+        buttSquared.addActionListener(new Squared());
+        buttN.addActionListener(new N());
+        buttDot.addActionListener(new Dot());
+        buttX.addActionListener(new X());
+        buttFibo.addActionListener(new Fibo());
+        buttClose.addActionListener(new Close()); */
+        
     } //JavaCaluclator()
 
     class ListenToClear implements ActionListener {
+        @Override
         public void actionPerformed(ActionEvent e) {
+            
             //display = jtfResult.getText();
             jtfResult.setText("");
             addBool = false;
             subBool = false;
-            mulBool = false;
+            MultiplyBool = false;
             divBool = false;
 
             TEMP = 0;
-            SolveTEMP = 0;
+            EqualsTEMP = 0;
         }
     }
 
-    class ListenToOne implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            display = jtfResult.getText();
-            jtfResult.setText(display + "1");
-        }
-    }
-
-    class ListenToTwo implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            display = jtfResult.getText();
-            jtfResult.setText(display + "2");
-        }
-    }
-
-    class ListenToThree implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            display = jtfResult.getText();
-            jtfResult.setText(display + "3");
-        }
-    }
-
-    class ListenToFour implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            display = jtfResult.getText();
-            jtfResult.setText(display + "4");
-        }
-    }
-
-    class ListenToFive implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            display = jtfResult.getText();
-            jtfResult.setText(display + "5");
-        }
-    }
-
-    class ListenToSix implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            display = jtfResult.getText();
-            jtfResult.setText(display + "6");
-        }
-    }
-
-    class ListenToSeven implements ActionListener {
+    //Line 1
+    class Seven implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             display = jtfResult.getText();
             jtfResult.setText(display + "7");
         }
     }
-
-    class ListenToEight implements ActionListener {
+    class Eight implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             display = jtfResult.getText();
             jtfResult.setText(display + "8");
         }
     }
-
-    class ListenToNine implements ActionListener {
+    class Nine implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             display = jtfResult.getText();
             jtfResult.setText(display + "9");
         }
     }
-
-    class ListenToZero implements ActionListener {
+    class Plus implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             display = jtfResult.getText();
-            jtfResult.setText(display + "0");
+            jtfResult.setText(display + "+");
+        }
+    }
+    class Max implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            display = jtfResult.getText();
+            jtfResult.setText(display + "");
+        }
+    }
+    class Mean implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            display = jtfResult.getText();
+            jtfResult.setText(display + "");
         }
     }
 
+    
+    //Line 2
+    class Four implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            display = jtfResult.getText();
+            jtfResult.setText(display + "4");
+        }
+    }
+    class Five implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            display = jtfResult.getText();
+            jtfResult.setText(display + "5");
+        }
+    }
+    class Six implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            display = jtfResult.getText();
+            jtfResult.setText(display + "6");
+        }
+    }
+    class Minus implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            display = jtfResult.getText();
+            jtfResult.setText(display + "-");
+        }
+    }
     class ListenToAdd implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -233,7 +268,6 @@ public class JavaCalculator extends JFrame {
             addBool = true;
         }
     }
-
     class ListenToSubtract implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -242,16 +276,195 @@ public class JavaCalculator extends JFrame {
             subBool = true;
         }
     }
-
-    class ListenToMultiply implements ActionListener {
+    class Min implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             TEMP = Double.parseDouble(jtfResult.getText());
             jtfResult.setText("");
-            mulBool = true;
+            //MinBool = true;
         }
     }
-
+     class Mode implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            TEMP = Double.parseDouble(jtfResult.getText());
+            jtfResult.setText("");
+            //ModeBool = true;
+        }
+    }
+     
+     
+    //Line 3
+    class One implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            TEMP = Double.parseDouble(jtfResult.getText());
+            jtfResult.setText("1");
+        }
+    }
+    class Two implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            TEMP = Double.parseDouble(jtfResult.getText());
+            jtfResult.setText("2");
+        }
+    }
+    class Three implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            TEMP = Double.parseDouble(jtfResult.getText());
+            jtfResult.setText("3");
+        }
+    }
+    class Multiply implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            TEMP = Double.parseDouble(jtfResult.getText());
+            jtfResult.setText("");
+            MultiplyBool = true;
+        }
+    }
+    class ParL implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            TEMP = Double.parseDouble(jtfResult.getText());
+            jtfResult.setText("(");
+        }
+    }
+    class Median implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            TEMP = Double.parseDouble(jtfResult.getText());
+            jtfResult.setText("1");
+            //MedianBool = true;
+        }
+    }
+    
+    //Line 4
+    class Clear implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            display = jtfResult.getText();
+            jtfResult.setText(display + "");
+            //Clear
+        }
+    }
+    class Zero implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            display = jtfResult.getText();
+            jtfResult.setText(display + "0");
+        }
+    }
+    class Erase implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            display = jtfResult.getText();
+            jtfResult.setText("");
+            //Erase
+        }
+    }
+    class Divide implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            display = jtfResult.getText();
+            jtfResult.setText("");
+            //Divide
+        }
+    }
+    class ParR implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            TEMP = Double.parseDouble(jtfResult.getText());
+            jtfResult.setText(display + ")");
+        }
+    }
+    class SortA implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            TEMP = Double.parseDouble(jtfResult.getText());
+            jtfResult.setText("");
+            //SortABool = true;
+        }
+    }
+    
+    
+   /*Line 5
+    class Equals implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            display = jtfResult.getText();
+            jtfResult.setText(display + "4");
+            
+        }
+    }
+    class Five implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            display = jtfResult.getText();
+            jtfResult.setText(display + "5");
+        }
+    }
+    class Six implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            display = jtfResult.getText();
+            jtfResult.setText(display + "6");
+        }
+    }
+    class Minus implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            display = jtfResult.getText();
+            jtfResult.setText(display + "-");
+        }
+    }
+    class ListenToAdd implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            TEMP = Double.parseDouble(jtfResult.getText());
+            jtfResult.setText("");
+            addBool = true;
+        }
+    }
+    class ListenToSubtract implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            TEMP = Double.parseDouble(jtfResult.getText());
+            jtfResult.setText("");
+            subBool = true;
+        }
+    }
+    class Min implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            TEMP = Double.parseDouble(jtfResult.getText());
+            jtfResult.setText("");
+            //MinBool = true;
+        }
+    }
+     class Mode implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            TEMP = Double.parseDouble(jtfResult.getText());
+            jtfResult.setText("");
+            //ModeBool = true;
+        }
+    }
+     class Mode implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            TEMP = Double.parseDouble(jtfResult.getText());
+            jtfResult.setText("");
+            //ModeBool = true;
+        }
+    }
+    
+    
+    
+    
+    */
+    
     class ListenToDivide implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -261,35 +474,28 @@ public class JavaCalculator extends JFrame {
         }
     }
 
-    class ListenToSolve implements ActionListener {
+    class ListenToEquals implements ActionListener {
+        @Override
         public void actionPerformed(ActionEvent e) {
-            SolveTEMP = Double.parseDouble(jtfResult.getText());
+            EqualsTEMP = Double.parseDouble(jtfResult.getText());
             if (addBool == true)
-                SolveTEMP = SolveTEMP + TEMP;
+                EqualsTEMP = EqualsTEMP + TEMP;
             else if ( subBool == true)
-                SolveTEMP = SolveTEMP - TEMP;
-            else if ( mulBool == true)
-                SolveTEMP = SolveTEMP * TEMP;
+                EqualsTEMP = EqualsTEMP - TEMP;
+            else if ( MultiplyBool == true)
+                EqualsTEMP = EqualsTEMP * TEMP;
             else if ( divBool == true)
-                            SolveTEMP = SolveTEMP / TEMP;
-            jtfResult.setText(  Double.toString(SolveTEMP));
+                EqualsTEMP = EqualsTEMP / TEMP;
+            jtfResult.setText(  Double.toString(EqualsTEMP));
 
             addBool = false;
             subBool = false;
-            mulBool = false;
+            MultiplyBool = false;
             divBool = false;
+            MaxBool = false;
         }
     }
 
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        JavaCalculator calc = new JavaCalculator();
-        calc.pack();
-        calc.setLocationRelativeTo(null);
-                calc.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        calc.setVisible(true);
-    }
+    
 
-} //JavaCalculator
-
-https://stackoverflow.com/questions/4298716/simple-gui-java-calculator/4298803
+}
